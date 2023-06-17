@@ -5,35 +5,47 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 🇸🇬 新加坡, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /}}
-  - {name: 🇸🇬 新加坡2, server: 158.178.240.234, port: 80, type: vmess, uuid: 9f2f3d2b-475b-423d-a3c3-4b105b866d53, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /}}
-  - {name: Joyceoy, server: 141.147.170.159, port: 13820, type: vmess, uuid: 90f3e022-eb11-4d0e-d5f1-9d4473300318, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /}}
+  - {name: 🇸🇬 ①新加坡IPV6 IPV4解锁流媒体, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
+  - {name: 🇸🇬 ②新加坡IPV6 IPV4解锁流媒体, server: 158.178.240.234, port: 80, type: vmess, uuid: 9f2f3d2b-475b-423d-a3c3-4b105b866d53, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
+  - {name: 🇯🇵 ③日本IPV6 IPV4解锁流媒体, server: 141.147.170.159, port: 13820, type: vmess, uuid: 90f3e022-eb11-4d0e-d5f1-9d4473300318, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /}}
+  - {name: 🇯🇵 ④日本IPV4, server: 64.110.97.219, port: 99, type: vmess, uuid: 4253d1ce-09e3-4367-ee01-b0282b1b010b, alterId: 0, cipher: auto, tls: false}
+  - {name: 优选 IP自己改, server: 1.1.1.1, port: 8880, type: vmess, uuid: 9e8deac4-8687-4af9-8204-3dac202edc2c, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: aaa.ipayyds.xyz}}}
+  - {name: 🇰🇷 ⑤韩国IPV6 IPV4解锁流媒体, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /}}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇸🇬 新加坡
-      - 🇸🇬 新加坡2
-      - Joyceoy
+      - 🇸🇬 ①新加坡IPV6 IPV4解锁流媒体
+      - 🇸🇬 ②新加坡IPV6 IPV4解锁流媒体
+      - 🇯🇵 ③日本IPV6 IPV4解锁流媒体
+      - 🇯🇵 ④日本IPV4
+      - 优选 IP自己改
+      - 🇰🇷 ⑤韩国IPV6 IPV4解锁流媒体
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇸🇬 新加坡
-      - 🇸🇬 新加坡2
-      - Joyceoy
+      - 🇸🇬 ①新加坡IPV6 IPV4解锁流媒体
+      - 🇸🇬 ②新加坡IPV6 IPV4解锁流媒体
+      - 🇯🇵 ③日本IPV6 IPV4解锁流媒体
+      - 🇯🇵 ④日本IPV4
+      - 优选 IP自己改
+      - 🇰🇷 ⑤韩国IPV6 IPV4解锁流媒体
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇸🇬 新加坡
-      - 🇸🇬 新加坡2
-      - Joyceoy
+      - 🇸🇬 ①新加坡IPV6 IPV4解锁流媒体
+      - 🇸🇬 ②新加坡IPV6 IPV4解锁流媒体
+      - 🇯🇵 ③日本IPV6 IPV4解锁流媒体
+      - 🇯🇵 ④日本IPV4
+      - 优选 IP自己改
+      - 🇰🇷 ⑤韩国IPV6 IPV4解锁流媒体
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -44,26 +56,35 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - 🇸🇬 新加坡
-      - 🇸🇬 新加坡2
-      - Joyceoy
+      - 🇸🇬 ①新加坡IPV6 IPV4解锁流媒体
+      - 🇸🇬 ②新加坡IPV6 IPV4解锁流媒体
+      - 🇯🇵 ③日本IPV6 IPV4解锁流媒体
+      - 🇯🇵 ④日本IPV4
+      - 优选 IP自己改
+      - 🇰🇷 ⑤韩国IPV6 IPV4解锁流媒体
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
-      - 🇸🇬 新加坡
-      - 🇸🇬 新加坡2
-      - Joyceoy
+      - 🇸🇬 ①新加坡IPV6 IPV4解锁流媒体
+      - 🇸🇬 ②新加坡IPV6 IPV4解锁流媒体
+      - 🇯🇵 ③日本IPV6 IPV4解锁流媒体
+      - 🇯🇵 ④日本IPV4
+      - 优选 IP自己改
+      - 🇰🇷 ⑤韩国IPV6 IPV4解锁流媒体
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇸🇬 新加坡
-      - 🇸🇬 新加坡2
-      - Joyceoy
+      - 🇸🇬 ①新加坡IPV6 IPV4解锁流媒体
+      - 🇸🇬 ②新加坡IPV6 IPV4解锁流媒体
+      - 🇯🇵 ③日本IPV6 IPV4解锁流媒体
+      - 🇯🇵 ④日本IPV4
+      - 优选 IP自己改
+      - 🇰🇷 ⑤韩国IPV6 IPV4解锁流媒体
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -79,9 +100,12 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇸🇬 新加坡
-      - 🇸🇬 新加坡2
-      - Joyceoy
+      - 🇸🇬 ①新加坡IPV6 IPV4解锁流媒体
+      - 🇸🇬 ②新加坡IPV6 IPV4解锁流媒体
+      - 🇯🇵 ③日本IPV6 IPV4解锁流媒体
+      - 🇯🇵 ④日本IPV4
+      - 优选 IP自己改
+      - 🇰🇷 ⑤韩国IPV6 IPV4解锁流媒体
 rules:
  - DOMAIN-SUFFIX,local,🎯 全球直连
  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
