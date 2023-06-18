@@ -2,7 +2,7 @@
 某人订阅
 
 #订阅&更新
-https://raw.githubusercontent.com/mwyyds/x/main/c
+https://raw.githubusercontent.com/mwyyds/x/main/x
 
 
 #交流群&电报
