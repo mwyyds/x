@@ -1,4 +1,5 @@
 # Shadowrocket: 2023-06-28 15:26:42
+
 [General]
 fallback-dns-server = system
 include = 无
