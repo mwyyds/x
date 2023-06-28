@@ -1,5 +1,7 @@
-#Iname=某人订阅
+#Iname=某人订阅电报群https://t.me/yydsxiaoming
+
 #!desc=更新时间2023.6.28
+
 port: 7890
 socks-port: 7891
 allow-lan: true
