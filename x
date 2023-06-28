@@ -1,3 +1,5 @@
+STATUS=某人订阅↑:520GB,↓:520GB,TOT:10240GB💡Expires:2099-05-20
+
 #Iname=某人订阅电报群https://t.me/yydsxiaoming
 
 #!desc=更新时间2023.6.28
