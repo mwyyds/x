@@ -1,4 +1,4 @@
-STATUS=https://t.me/yydsxiaoming↑:520GB,↓:520GB,TOT:10240GB💡Expires:2099-05-20
+STATUS=❤️↑:520GB,↓:520GB,TOT:10240GB💡Expires:2099-05-20
 
 #Iname=某人订阅电报群https://t.me/yydsxiaoming
 
