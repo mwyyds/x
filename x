@@ -6,12 +6,12 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 🇸🇬 ①新加坡, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22tms.dingtalk.com%22%7D"}}}
-  - {name: 🇸🇬 ②新加坡, server: 129.150.35.212, port: 80, type: vmess, uuid: 9f2f3d2b-475b-423d-a3c3-4b105b866d53, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22tms.dingtalk.com%22%7D"}}}
-  - {name: 🇯🇵 ③日本, server: 141.147.170.159, port: 13820, type: vmess, uuid: 90f3e022-eb11-4d0e-d5f1-9d4473300318, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22tms.dingtalk.com%22%7D"}}}
+  - {name: 🇸🇬 ①新加坡, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "tms.dingtalk.com"}}}
+  - {name: 🇸🇬 ②新加坡, server: 129.150.35.212, port: 80, type: vmess, uuid: 9f2f3d2b-475b-423d-a3c3-4b105b866d53, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "tms.dingtalk.com"}}}
+  - {name: 🇯🇵 ③日本, server: 141.147.170.159, port: 13820, type: vmess, uuid: 90f3e022-eb11-4d0e-d5f1-9d4473300318, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "tms.dingtalk.com"}}}
   - {name: 🇯🇵 ④日本IPV4, server: 64.110.97.219, port: 99, type: vmess, uuid: 4253d1ce-09e3-4367-ee01-b0282b1b010b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
-  - {name: 🇰🇷 ⑤韩国, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22tms.dingtalk.com%22%7D"}}}
-  - {name: ⑥优选IP, server: 141.147.171.156, port: 8880, type: vmess, uuid: 9e8deac4-8687-4af9-8204-3dac202edc2c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22%257B%2522Host%2522:%2522aaa.ipayyds.xyz%2522%257D%22%7D"}}}
+  - {name: 🇰🇷 ⑤韩国, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "tms.dingtalk.com"}}}
+  - {name: ⑥优选IP, server: 141.147.171.156, port: 8880, type: vmess, uuid: 9e8deac4-8687-4af9-8204-3dac202edc2c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "aaa.ipayyds.xyz"}}}
   - {name: 🇯🇵 ⑦甲骨文日本, server: 132.145.126.111, port: 50177, type: vmess, uuid: 327a1ae6-3140-4061-a288-fdedf354526d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
 proxy-groups:
   - name: 🚀 节点选择
