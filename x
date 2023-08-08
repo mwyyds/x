@@ -1,4 +1,4 @@
-#某人更新时间2023-7-8
+#某人更新时间2023-8-8
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -6,12 +6,13 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 🇸🇬 ①新加坡, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
-  - {name: 🇸🇬 ②新加坡, server: 129.150.35.212, port: 80, type: vmess, uuid: 9f2f3d2b-475b-423d-a3c3-4b105b866d53, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
-  - {name: 🇯🇵 ③日本, server: 141.147.170.159, port: 13820, type: vmess, uuid: 90f3e022-eb11-4d0e-d5f1-9d4473300318, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
+  - {name: 🇸🇬 ①新加坡, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22tms.dingtalk.com%22%7D"}}}
+  - {name: 🇸🇬 ②新加坡, server: 129.150.35.212, port: 80, type: vmess, uuid: 9f2f3d2b-475b-423d-a3c3-4b105b866d53, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22tms.dingtalk.com%22%7D"}}}
+  - {name: 🇯🇵 ③日本, server: 141.147.170.159, port: 13820, type: vmess, uuid: 90f3e022-eb11-4d0e-d5f1-9d4473300318, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22tms.dingtalk.com%22%7D"}}}
   - {name: 🇯🇵 ④日本IPV4, server: 64.110.97.219, port: 99, type: vmess, uuid: 4253d1ce-09e3-4367-ee01-b0282b1b010b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
-  - {name: 🇰🇷 ⑤韩国, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
-  - {name: ⑥优选IP, server: 141.147.171.156, port: 8880, type: vmess, uuid: 9e8deac4-8687-4af9-8204-3dac202edc2c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22aaa.ipayyds.xyz%22%7D"}}}
+  - {name: 🇰🇷 ⑤韩国, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22tms.dingtalk.com%22%7D"}}}
+  - {name: ⑥优选IP, server: 141.147.171.156, port: 8880, type: vmess, uuid: 9e8deac4-8687-4af9-8204-3dac202edc2c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "%7B%22Host%22:%22%257B%2522Host%2522:%2522aaa.ipayyds.xyz%2522%257D%22%7D"}}}
+  - {name: 🇯🇵 ⑦甲骨文日本, server: 132.145.126.111, port: 50177, type: vmess, uuid: 327a1ae6-3140-4061-a288-fdedf354526d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -24,6 +25,7 @@ proxy-groups:
       - 🇯🇵 ④日本IPV4
       - 🇰🇷 ⑤韩国
       - ⑥优选IP
+      - 🇯🇵 ⑦甲骨文日本
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -36,6 +38,7 @@ proxy-groups:
       - 🇯🇵 ④日本IPV4
       - 🇰🇷 ⑤韩国
       - ⑥优选IP
+      - 🇯🇵 ⑦甲骨文日本
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -48,6 +51,7 @@ proxy-groups:
       - 🇯🇵 ④日本IPV4
       - 🇰🇷 ⑤韩国
       - ⑥优选IP
+      - 🇯🇵 ⑦甲骨文日本
   - name: 📲 电报信息
     type: select
     proxies:
@@ -59,6 +63,7 @@ proxy-groups:
       - 🇯🇵 ④日本IPV4
       - 🇰🇷 ⑤韩国
       - ⑥优选IP
+      - 🇯🇵 ⑦甲骨文日本
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -70,6 +75,7 @@ proxy-groups:
       - 🇯🇵 ④日本IPV4
       - 🇰🇷 ⑤韩国
       - ⑥优选IP
+      - 🇯🇵 ⑦甲骨文日本
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -81,6 +87,7 @@ proxy-groups:
       - 🇯🇵 ④日本IPV4
       - 🇰🇷 ⑤韩国
       - ⑥优选IP
+      - 🇯🇵 ⑦甲骨文日本
   - name: 📢 谷歌FCM
     type: select
     proxies:
@@ -93,6 +100,7 @@ proxy-groups:
       - 🇯🇵 ④日本IPV4
       - 🇰🇷 ⑤韩国
       - ⑥优选IP
+      - 🇯🇵 ⑦甲骨文日本
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -121,6 +129,7 @@ proxy-groups:
       - 🇯🇵 ④日本IPV4
       - 🇰🇷 ⑤韩国
       - ⑥优选IP
+      - 🇯🇵 ⑦甲骨文日本
 rules:
  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
@@ -173,11 +182,12 @@ rules:
  - DOMAIN,app.adjust.com,🎯 全球直连
  - DOMAIN,bdtj.tagtic.cn,🎯 全球直连
  - DOMAIN,rewards.hypixel.net,🎯 全球直连
+ - DOMAIN-SUFFIX,koodomobile.com,🎯 全球直连
+ - DOMAIN-SUFFIX,koodomobile.ca,🎯 全球直连
  - DOMAIN-KEYWORD,admarvel,🛑 全球拦截
  - DOMAIN-KEYWORD,admaster,🛑 全球拦截
  - DOMAIN-KEYWORD,adsage,🛑 全球拦截
  - DOMAIN-KEYWORD,adsensor,🛑 全球拦截
- - DOMAIN-KEYWORD,adservice,🛑 全球拦截
  - DOMAIN-KEYWORD,adsmogo,🛑 全球拦截
  - DOMAIN-KEYWORD,adsrvmedia,🛑 全球拦截
  - DOMAIN-KEYWORD,adsserving,🛑 全球拦截
@@ -1951,6 +1961,7 @@ rules:
  - DOMAIN-SUFFIX,aaplimg.com,🍎 苹果服务
  - DOMAIN-SUFFIX,akadns.net,🍎 苹果服务
  - DOMAIN-SUFFIX,apple-cloudkit.com,🍎 苹果服务
+ - DOMAIN-SUFFIX,apple-dns.net,🍎 苹果服务
  - DOMAIN-SUFFIX,apple-mapkit.com,🍎 苹果服务
  - DOMAIN-SUFFIX,apple.co,🍎 苹果服务
  - DOMAIN-SUFFIX,apple.com,🍎 苹果服务
@@ -2014,6 +2025,7 @@ rules:
  - DOMAIN-SUFFIX,aiv-cdn.net,🌍 国外媒体
  - DOMAIN-SUFFIX,aiv-delivery.net,🌍 国外媒体
  - DOMAIN-SUFFIX,amazon.jobs,🌍 国外媒体
+ - DOMAIN-SUFFIX,amazontools.com,🌍 国外媒体
  - DOMAIN-SUFFIX,amazonuniversity.jobs,🌍 国外媒体
  - DOMAIN-SUFFIX,amazonvideo.com,🌍 国外媒体
  - DOMAIN-SUFFIX,media-amazon.com,🌍 国外媒体
@@ -2200,6 +2212,7 @@ rules:
  - IP-CIDR,192.173.64.0/18,🌍 国外媒体,no-resolve
  - IP-CIDR,198.38.96.0/19,🌍 国外媒体,no-resolve
  - IP-CIDR,198.45.48.0/20,🌍 国外媒体,no-resolve
+ - IP-CIDR,203.75.84.0/24,🌍 国外媒体,no-resolve
  - IP-CIDR,207.45.72.0/22,🌍 国外媒体,no-resolve
  - IP-CIDR,208.75.76.0/22,🌍 国外媒体,no-resolve
  - DOMAIN-SUFFIX,dmc.nico,🌍 国外媒体
@@ -2737,6 +2750,7 @@ rules:
  - DOMAIN-SUFFIX,pdfwifi.com,🎯 全球直连
  - DOMAIN-SUFFIX,zhenguanyu.biz,🎯 全球直连
  - DOMAIN-SUFFIX,zhenguanyu.com,🎯 全球直连
+ - DOMAIN-SUFFIX,snapdrop.net,🎯 全球直连
  - DOMAIN-SUFFIX,cn,🎯 全球直连
  - DOMAIN-SUFFIX,xn--fiqs8s,🎯 全球直连
  - DOMAIN-SUFFIX,xn--55qx5d,🎯 全球直连
@@ -3057,130 +3071,6 @@ rules:
  - DOMAIN-SUFFIX,zmzapi.com,🎯 全球直连
  - DOMAIN-SUFFIX,zmzapi.net,🎯 全球直连
  - DOMAIN-SUFFIX,zmzfile.com,🎯 全球直连
- - DOMAIN-KEYWORD,announce,🎯 全球直连
- - DOMAIN-KEYWORD,torrent,🎯 全球直连
- - DOMAIN-KEYWORD,tracker,🎯 全球直连
- - DOMAIN-KEYWORD,announce,🎯 全球直连
- - DOMAIN-KEYWORD,torrent,🎯 全球直连
- - DOMAIN-KEYWORD,tracker,🎯 全球直连
- - DOMAIN-SUFFIX,52pt.site,🎯 全球直连
- - DOMAIN-SUFFIX,aidoru-online.me,🎯 全球直连
- - DOMAIN-SUFFIX,alpharatio.cc,🎯 全球直连
- - DOMAIN-SUFFIX,animebytes.tv,🎯 全球直连
- - DOMAIN-SUFFIX,animetorrents.me,🎯 全球直连
- - DOMAIN-SUFFIX,anthelion.me,🎯 全球直连
- - DOMAIN-SUFFIX,asiancinema.me,🎯 全球直连
- - DOMAIN-SUFFIX,audiences.me,🎯 全球直连
- - DOMAIN-SUFFIX,avgv.cc,🎯 全球直连
- - DOMAIN-SUFFIX,avistaz.to,🎯 全球直连
- - DOMAIN-SUFFIX,awesome-hd.me,🎯 全球直连
- - DOMAIN-SUFFIX,beitai.pt,🎯 全球直连
- - DOMAIN-SUFFIX,beyond-hd.me,🎯 全球直连
- - DOMAIN-SUFFIX,bibliotik.me,🎯 全球直连
- - DOMAIN-SUFFIX,bittorrent.com,🎯 全球直连
- - DOMAIN-SUFFIX,blutopia.xyz,🎯 全球直连
- - DOMAIN-SUFFIX,broadcasthe.net,🎯 全球直连
- - DOMAIN-SUFFIX,bt.byr.cn,🎯 全球直连
- - DOMAIN-SUFFIX,bt.neu6.edu.cn,🎯 全球直连
- - DOMAIN-SUFFIX,btschool.club,🎯 全球直连
- - DOMAIN-SUFFIX,bwtorrents.tv,🎯 全球直连
- - DOMAIN-SUFFIX,byr.pt,🎯 全球直连
- - DOMAIN-SUFFIX,ccfbits.org,🎯 全球直连
- - DOMAIN-SUFFIX,cgpeers.com,🎯 全球直连
- - DOMAIN-SUFFIX,chdbits.co,🎯 全球直连
- - DOMAIN-SUFFIX,cinemageddon.net,🎯 全球直连
- - DOMAIN-SUFFIX,cinematik.net,🎯 全球直连
- - DOMAIN-SUFFIX,cinemaz.to,🎯 全球直连
- - DOMAIN-SUFFIX,classix-unlimited.co.uk,🎯 全球直连
- - DOMAIN-SUFFIX,concertos.live,🎯 全球直连
- - DOMAIN-SUFFIX,dicmusic.club,🎯 全球直连
- - DOMAIN-SUFFIX,discfan.net,🎯 全球直连
- - DOMAIN-SUFFIX,dxdhd.com,🎯 全球直连
- - DOMAIN-SUFFIX,eastgame.org,🎯 全球直连
- - DOMAIN-SUFFIX,empornium.me,🎯 全球直连
- - DOMAIN-SUFFIX,et8.org,🎯 全球直连
- - DOMAIN-SUFFIX,exoticaz.to,🎯 全球直连
- - DOMAIN-SUFFIX,extremlymtorrents.ws,🎯 全球直连
- - DOMAIN-SUFFIX,filelist.io,🎯 全球直连
- - DOMAIN-SUFFIX,gainbound.net,🎯 全球直连
- - DOMAIN-SUFFIX,gazellegames.net,🎯 全球直连
- - DOMAIN-SUFFIX,gfxpeers.net,🎯 全球直连
- - DOMAIN-SUFFIX,hd-space.org,🎯 全球直连
- - DOMAIN-SUFFIX,hd-torrents.org,🎯 全球直连
- - DOMAIN-SUFFIX,hd4.xyz,🎯 全球直连
- - DOMAIN-SUFFIX,hd4fans.org,🎯 全球直连
- - DOMAIN-SUFFIX,hdarea.co,🎯 全球直连
- - DOMAIN-SUFFIX,hdatmos.club,🎯 全球直连
- - DOMAIN-SUFFIX,hdbd.us,🎯 全球直连
- - DOMAIN-SUFFIX,hdbits.org,🎯 全球直连
- - DOMAIN-SUFFIX,hdchina.org,🎯 全球直连
- - DOMAIN-SUFFIX,hdcity.city,🎯 全球直连
- - DOMAIN-SUFFIX,hddolby.com,🎯 全球直连
- - DOMAIN-SUFFIX,hdfans.org,🎯 全球直连
- - DOMAIN-SUFFIX,hdhome.org,🎯 全球直连
- - DOMAIN-SUFFIX,hdpost.top,🎯 全球直连
- - DOMAIN-SUFFIX,hdroute.org,🎯 全球直连
- - DOMAIN-SUFFIX,hdsky.me,🎯 全球直连
- - DOMAIN-SUFFIX,hdstreet.club,🎯 全球直连
- - DOMAIN-SUFFIX,hdtime.org,🎯 全球直连
- - DOMAIN-SUFFIX,hdupt.com,🎯 全球直连
- - DOMAIN-SUFFIX,hdzone.me,🎯 全球直连
- - DOMAIN-SUFFIX,hhanclub.top,🎯 全球直连
- - DOMAIN-SUFFIX,hitpt.com,🎯 全球直连
- - DOMAIN-SUFFIX,hitpt.org,🎯 全球直连
- - DOMAIN-SUFFIX,hudbt.hust.edu.cn,🎯 全球直连
- - DOMAIN-SUFFIX,icetorrent.org,🎯 全球直连
- - DOMAIN-SUFFIX,iptorrents.com,🎯 全球直连
- - DOMAIN-SUFFIX,j99.info,🎯 全球直连
- - DOMAIN-SUFFIX,joyhd.net,🎯 全球直连
- - DOMAIN-SUFFIX,jpopsuki.eu,🎯 全球直连
- - DOMAIN-SUFFIX,karagarga.in,🎯 全球直连
- - DOMAIN-SUFFIX,keepfrds.com,🎯 全球直连
- - DOMAIN-SUFFIX,landof.tv,🎯 全球直连
- - DOMAIN-SUFFIX,leaguehd.com,🎯 全球直连
- - DOMAIN-SUFFIX,lemonhd.org,🎯 全球直连
- - DOMAIN-SUFFIX,lztr.me,🎯 全球直连
- - DOMAIN-SUFFIX,m-team.cc,🎯 全球直连
- - DOMAIN-SUFFIX,madsrevolution.net,🎯 全球直连
- - DOMAIN-SUFFIX,moecat.best,🎯 全球直连
- - DOMAIN-SUFFIX,morethan.tv,🎯 全球直连
- - DOMAIN-SUFFIX,msg.vg,🎯 全球直连
- - DOMAIN-SUFFIX,myanonamouse.net,🎯 全球直连
- - DOMAIN-SUFFIX,nanyangpt.com,🎯 全球直连
- - DOMAIN-SUFFIX,ncore.cc,🎯 全球直连
- - DOMAIN-SUFFIX,nebulance.io,🎯 全球直连
- - DOMAIN-SUFFIX,nicept.net,🎯 全球直连
- - DOMAIN-SUFFIX,npupt.com,🎯 全球直连
- - DOMAIN-SUFFIX,nwsuaf6.edu.cn,🎯 全球直连
- - DOMAIN-SUFFIX,open.cd,🎯 全球直连
- - DOMAIN-SUFFIX,oppaiti.me,🎯 全球直连
- - DOMAIN-SUFFIX,orpheus.network,🎯 全球直连
- - DOMAIN-SUFFIX,ourbits.club,🎯 全球直连
- - DOMAIN-SUFFIX,passthepopcorn.me,🎯 全球直连
- - DOMAIN-SUFFIX,pornbits.net,🎯 全球直连
- - DOMAIN-SUFFIX,privatehd.to,🎯 全球直连
- - DOMAIN-SUFFIX,pterclub.com,🎯 全球直连
- - DOMAIN-SUFFIX,pthome.net,🎯 全球直连
- - DOMAIN-SUFFIX,ptsbao.club,🎯 全球直连
- - DOMAIN-SUFFIX,pttime.org,🎯 全球直连
- - DOMAIN-SUFFIX,pussytorrents.org,🎯 全球直连
- - DOMAIN-SUFFIX,redacted.ch,🎯 全球直连
- - DOMAIN-SUFFIX,sdbits.org,🎯 全球直连
- - DOMAIN-SUFFIX,sharkpt.net,🎯 全球直连
- - DOMAIN-SUFFIX,sjtu.edu.cn,🎯 全球直连
- - DOMAIN-SUFFIX,skyey2.com,🎯 全球直连
- - DOMAIN-SUFFIX,soulvoice.club,🎯 全球直连
- - DOMAIN-SUFFIX,springsunday.net,🎯 全球直连
- - DOMAIN-SUFFIX,tju.pt,🎯 全球直连
- - DOMAIN-SUFFIX,tjupt.org,🎯 全球直连
- - DOMAIN-SUFFIX,torrentday.com,🎯 全球直连
- - DOMAIN-SUFFIX,torrentleech.org,🎯 全球直连
- - DOMAIN-SUFFIX,torrentseeds.org,🎯 全球直连
- - DOMAIN-SUFFIX,totheglory.im,🎯 全球直连
- - DOMAIN-SUFFIX,trontv.com,🎯 全球直连
- - DOMAIN-SUFFIX,u2.dmhy.org,🎯 全球直连
- - DOMAIN-SUFFIX,uhdbits.org,🎯 全球直连
- - DOMAIN-SUFFIX,xauat6.edu.cn,🎯 全球直连
  - DOMAIN-SUFFIX,teamviewer.com,🎯 全球直连
  - IP-CIDR,139.220.243.27/32,🎯 全球直连,no-resolve
  - IP-CIDR,172.16.102.56/32,🎯 全球直连,no-resolve
@@ -3195,6 +3085,10 @@ rules:
  - DOMAIN-SUFFIX,jiasule.com,🎯 全球直连
  - DOMAIN-SUFFIX,staticfile.org,🎯 全球直连
  - DOMAIN-SUFFIX,upaiyun.com,🎯 全球直连
+ - DOMAIN-SUFFIX,doh.pub,🎯 全球直连
+ - DOMAIN-SUFFIX,dns.alidns.com,🎯 全球直连
+ - DOMAIN-SUFFIX,doh.360.cn,🎯 全球直连
+ - IP-CIDR,1.12.12.12/32,🎯 全球直连,no-resolve
  - DOMAIN-SUFFIX,10010.com,🎯 全球直连
  - DOMAIN-SUFFIX,115.com,🎯 全球直连
  - DOMAIN-SUFFIX,12306.com,🎯 全球直连
@@ -3259,6 +3153,7 @@ rules:
  - DOMAIN-SUFFIX,eastday.com,🎯 全球直连
  - DOMAIN-SUFFIX,eastmoney.com,🎯 全球直连
  - DOMAIN-SUFFIX,ecitic.com,🎯 全球直连
+ - DOMAIN-SUFFIX,element-plus.org,🎯 全球直连
  - DOMAIN-SUFFIX,ewqcxz.com,🎯 全球直连
  - DOMAIN-SUFFIX,fang.com,🎯 全球直连
  - DOMAIN-SUFFIX,fantasy.tv,🎯 全球直连
