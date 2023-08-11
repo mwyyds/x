@@ -12,7 +12,7 @@ proxies:
   - {name: 🇯🇵 ④日本IPV4, server: 64.110.97.219, port: 99, type: vmess, uuid: 4253d1ce-09e3-4367-ee01-b0282b1b010b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
   - {name: 🇰🇷 ⑤韩国, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "tms.dingtalk.com"}}}
   - {name: ⑥优选IP, server: 141.147.171.156, port: 8880, type: vmess, uuid: 9e8deac4-8687-4af9-8204-3dac202edc2c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "aaa.ipayyds.xyz"}}}
-  - {name: 🇯🇵 电报群https://t.me/yydsxiaoming, server: 150.230.205.62, port: 16914, type: vmess, uuid: efc9b4f7-4296-4cb7-98e1-f668df69a617, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
+  - {name: 🇯🇵 ⑦甲骨文日本, server: 150.230.205.62, port: 16914, type: vmess, uuid: efc9b4f7-4296-4cb7-98e1-f668df69a617, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tms.dingtalk.com}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
