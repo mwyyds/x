@@ -4,9 +4,9 @@ import { connect } from 'cloudflare:sockets';
 
 // How to generate your own UUID:
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
-let userID = '3071d618-9894-4302-9eaf-217b49c0c01d';
+let userID = '07e4924b-c23e-4129-bc60-a1c95e4e0e1d';
 
-const proxyIPs = ['cdn-all.xn--b6gac.eu.org', 'cdn-all.xijingping.link', 'cdn.xn--b6gac.eu.org', 'cdn-b100.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org', 'cdn.anycast.eu.org'];
+const proxyIPs = ['103.200.112.108']; // ['cdn-all.xn--b6gac.eu.org', 'cdn.xn--b6gac.eu.org', 'cdn-b100.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org', 'cdn.anycast.eu.org'];
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 
 let dohURL = 'https://sky.rethinkdns.com/1:-Pf_____9_8A_AMAIgE8kMABVDDmKOHTAKg='; // https://cloudflare-dns.com/dns-query or https://dns.google/dns-query
@@ -101,7 +101,7 @@ export default {
 					default:
 						// return new Response('Not found', { status: 404 });
 						// For any other path, reverse proxy to 'www.fmprc.gov.cn' and return the original response
-						url.hostname = 'tv.cctv.com';
+						url.hostname = 'global.cctv.com';
 						url.protocol = 'https:';
 						request = new Request(url, request);
 						return await fetch(request);
@@ -120,7 +120,7 @@ export default {
 
 
 /**
- * 
+ * 
  * @param {import("@cloudflare/workers-types").Request} request
  */
 async function vlessOverWSHandler(request) {
@@ -164,7 +164,7 @@ async function vlessOverWSHandler(request) {
 			const {
 				hasError,
 				message,
-				portRemote = 443,
+				portRemote = [443, 8443, 2053, 2083, 2087, 2096, 80, 8080, 8880, 2052, 2082, 2086, 2095],
 				addressRemote = '',
 				rawDataIndex,
 				vlessVersion = new Uint8Array([0, 0]),
@@ -297,7 +297,7 @@ async function checkUuidInApiResponse(targetUuid) {
 /**
  * Handles outbound TCP connections.
  *
- * @param {any} remoteSocket 
+ * @param {any} remoteSocket 
  * @param {string} addressRemote The remote address to connect to.
  * @param {number} portRemote The remote port to connect to.
  * @param {Uint8Array} rawClientData The raw client data to write.
@@ -341,7 +341,7 @@ async function handleTCPOutBound(remoteSocket, addressRemote, portRemote, rawCli
 }
 
 /**
- * 
+ * 
  * @param {import("@cloudflare/workers-types").WebSocket} webSocketServer
  * @param {string} earlyDataHeader for ws 0rtt
  * @param {(info: string)=> void} log for ws 0rtt
@@ -410,10 +410,10 @@ function makeReadableWebSocketStream(webSocketServer, earlyDataHeader, log) {
 // https://github.com/zizifn/excalidraw-backup/blob/main/v2ray-protocol.excalidraw
 
 /**
- * 
- * @param { ArrayBuffer} vlessBuffer 
- * @param {string} userID 
- * @returns 
+ * 
+ * @param { ArrayBuffer} vlessBuffer 
+ * @param {string} userID 
+ * @returns 
  */
 async function processVlessHeader(
 	vlessBuffer,
@@ -536,12 +536,12 @@ async function processVlessHeader(
 
 
 /**
- * 
- * @param {import("@cloudflare/workers-types").Socket} remoteSocket 
- * @param {import("@cloudflare/workers-types").WebSocket} webSocket 
- * @param {ArrayBuffer} vlessResponseHeader 
+ * 
+ * @param {import("@cloudflare/workers-types").Socket} remoteSocket 
+ * @param {import("@cloudflare/workers-types").WebSocket} webSocket 
+ * @param {ArrayBuffer} vlessResponseHeader 
  * @param {(() => Promise<void>) | null} retry
- * @param {*} log 
+ * @param {*} log 
  */
 async function remoteSocketToWS(remoteSocket, webSocket, vlessResponseHeader, retry, log) {
 	// remote--> ws
@@ -556,9 +556,9 @@ async function remoteSocketToWS(remoteSocket, webSocket, vlessResponseHeader, re
 				start() {
 				},
 				/**
-				 * 
-				 * @param {Uint8Array} chunk 
-				 * @param {*} controller 
+				 * 
+				 * @param {Uint8Array} chunk 
+				 * @param {*} controller 
 				 */
 				async write(chunk, controller) {
 					hasIncomingData = true;
@@ -607,9 +607,9 @@ async function remoteSocketToWS(remoteSocket, webSocket, vlessResponseHeader, re
 }
 
 /**
- * 
- * @param {string} base64Str 
- * @returns 
+ * 
+ * @param {string} base64Str 
+ * @returns 
  */
 function base64ToArrayBuffer(base64Str) {
 	if (!base64Str) {
@@ -628,7 +628,7 @@ function base64ToArrayBuffer(base64Str) {
 
 /**
  * This is not real UUID validation
- * @param {string} uuid 
+ * @param {string} uuid 
  */
 function isValidUUID(uuid) {
 	const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -668,10 +668,10 @@ function stringify(arr, offset = 0) {
 
 
 /**
- * 
- * @param {import("@cloudflare/workers-types").WebSocket} webSocket 
- * @param {ArrayBuffer} vlessResponseHeader 
- * @param {(string)=> void} log 
+ * 
+ * @param {import("@cloudflare/workers-types").WebSocket} webSocket 
+ * @param {ArrayBuffer} vlessResponseHeader 
+ * @param {(string)=> void} log 
  */
 async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
 
@@ -730,8 +730,8 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
 
 	return {
 		/**
-		 * 
-		 * @param {Uint8Array} chunk 
+		 * 
+		 * @param {Uint8Array} chunk 
 		 */
 		write(chunk) {
 			writer.write(chunk);
@@ -740,74 +740,109 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
 }
 
 /**
- * 
- * @param {string} userID 
+ * 
+ * @param {string} userID 
  * @param {string | null} hostName
  * @returns {string}
  */
 function getVLESSConfig(userID, hostName) {
-	const vlessws = `vless://${userID}@time.cloudflare.com:8880?encryption=none&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`
-	const vlesswstls = `vless://${userID}@time.cloudflare.com:8443?encryption=none&security=tls&type=ws&host=兄弟，你的自定义域名呢？&path=%2F%3Fed%3D2048#${hostName}`
-	return `
-
+  const wvlessws = `vless://${userID}@skk.moe:8880?encryption=none&security=none&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`;
+  const pvlesswstls = `vless://${userID}@skk.moe:8443?encryption=none&security=tls&type=ws&host=${hostName}&sni=${hostName}&fp=random&path=%2F%3Fed%3D2048#${hostName}`;
+  
+  if (hostName.includes('pages.dev')) {
+    return `
 ==========================配置详解==============================
 
+################################################################
+CF-pages-vless+ws+tls节点，分享链接如下：
+
+${pvlesswstls}
+
+---------------------------------------------------------------
+注意：如果 ${hostName} 在本地网络打不开（中国移动用户注意）
+       客户端选项的伪装域名(host)必须改为你在CF解析完成的自定义域名
+---------------------------------------------------------------
+客户端必要文明参数如下：
+客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP
+端口(port)：6个https端口可任意选择(443、8443、2053、2083、2087、2096)
+用户ID(uuid)：${userID}
+传输协议(network)：ws 或者 websocket
+伪装域名(host)：${hostName}
+路径(path)：/?ed=2048
+传输安全(TLS)：开启
+跳过证书验证(allowlnsecure)：false
+################################################################
+`;
+
+  } else if (hostName.includes('workers.dev'))  {
+    return `
+==========================配置详解==============================
 
 ################################################################
 一、CF-workers-vless+ws节点，分享链接如下：
 
-${vlessws}
+${wvlessws}
 
 ---------------------------------------------------------------
-注意：当前节点无需域名，TLS选项关闭
+注意：当前节点无需使用CF解析完成的域名，客户端选项的TLS选项必须关闭
 ---------------------------------------------------------------
 客户端必要文明参数如下：
-客户端地址（address）：自选域名 或者 自选IP
+客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP
 端口(port)：7个http端口可任意选择(80、8080、8880、2052、2082、2086、2095)
-用户ID（uuid）：${userID}
-传输协议（network）：ws/websocket
-伪装域名（host）：${hostName}
-路径（path）：/?ed=2048
+用户ID(uuid)：${userID}
+传输协议(network)：ws 或者 websocket
+伪装域名(host)：${hostName}
+路径(path)：/?ed=2048
 ################################################################
 
 
 ################################################################
-二、CF-workers-vless+ws+tls节点，分享链接如下：
 
-${vlesswstls}
+查看CF-workers-vless+ws+tls节点配置信息，请在浏览器地址栏输入：自定义域名/UUID
 
----------------------------------------------------------------
-注意：客户端ws选项后的伪装域名host必须改为你自定义的域名
----------------------------------------------------------------
-客户端必要文明参数如下：
-客户端地址（address）：自选域名 或者 自选IP
-端口(port)：6个https端口可任意选择(443、8443、2053、2083、2087、2096)
-用户ID（uuid）：${userID}
-传输协议（network）：ws/websocket
-伪装域名（host）：兄弟，你的自定义域名呢？
-路径（path）：/?ed=2048
-传输安全（TLS）：开启
-跳过证书验证（allowlnsecure）：false
-################################################################
-
-################################################################
-clash-meta
----------------------------------------------------------------
-- type: vless
-  name: ${hostName}
-  server: ${hostName}
-  port: 443
-  uuid: ${userID}
-  network: ws
-  tls: true
-  udp: false
-  sni: ${hostName}
-  client-fingerprint: chrome
-  ws-opts:
-    path: "/?ed=2048"
-    headers:
-      host: ${hostName}
----------------------------------------------------------------
 ################################################################
 `;
+  } else {
+    return `
+==========================配置详解==============================
+
+=====使用自定义域名查看配置，请确认使用的是workers还是pages=====
+
+################################################################
+一、CF-workers-vless+ws节点，分享链接如下：
+
+${wvlessws}
+
+---------------------------------------------------------------
+注意：当前节点无需使用CF解析完成的域名，客户端选项的TLS选项必须关闭
+---------------------------------------------------------------
+客户端必要文明参数如下：
+客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP
+端口(port)：7个http端口可任意选择(80、8080、8880、2052、2082、2086、2095)
+用户ID(uuid)：${userID}
+传输协议(network)：ws 或者 websocket
+伪装域名(host)：${hostName}
+路径(path)：/?ed=2048
+################################################################
+
+################################################################
+二、CF-workers-vless+ws+tls 或者 CF-pages-vless+ws+tls节点，分享链接如下：
+
+${pvlesswstls}
+
+---------------------------------------------------------------
+注意：客户端选项的伪装域名(host)必须改为你在CF解析完成的自定义域名
+---------------------------------------------------------------
+客户端必要文明参数如下：
+客户端地址(address)：自定义的域名 或者 优选域名 或者 优选IP
+端口(port)：6个https端口可任意选择(443、8443、2053、2083、2087、2096)
+用户ID(uuid)：${userID}
+传输协议(network)：ws 或者 websocket
+伪装域名(host)：${hostName}
+路径(path)：/?ed=2048
+传输安全(TLS)：开启
+跳过证书验证(allowlnsecure)：false
+################################################################
+`;
+  }
 }
