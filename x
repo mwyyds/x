@@ -1,14 +1,14 @@
 #某人更新时间2023-8-23
 #电报群https://t.me/yydsxiaoming
 proxies:
-  - {name: ⑧甲骨文日本, server: 141.147.173.237, port: 54998, type: vmess, uuid: ade0d9a7-a657-4f96-88b5-c789b01de284, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
-  - {name: ①甲骨文新加坡, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9894-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
-  - {name: ②甲骨文新加坡, server: 129.150.35.212, port: 80, type: vmess, uuid: 9f2f3d2b-475b-423d-a3c3-4b105b866d53, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
-  - {name: ③甲骨文日本, server: 141.147.170.159, port: 13820, type: vmess, uuid: 90f3e022-eb11-4d0e-d5f1-9d4473300318, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
-  - {name: ④甲骨文日本, server: 64.110.97.219, port: 99, type: vmess, uuid: 4253d1ce-09e3-4367-ee01-b0282b1b010b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
-  - {name: ⑤甲骨文韩国, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a6-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
-  - {name: ⑥甲骨文日本, server: 141.147.171.156, port: 8880, type: vmess, uuid: 9e8deac4-8687-4af9-8204-3dac202edc2c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "aaa.ipayyds.xyz"}}}
-  - {name: ⑦甲骨文日本, server: 150.230.205.62, port: 16914, type: vmess, uuid: efc9b4f7-4296-4cb7-98e1-f668df69a617, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
+  - {name: ⑧地址更新在群内获取, server: 141.147.173.237, port: 54998, type: vmess, uuid: ade0d9a6-a657-4f96-88b5-c789b01de284, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
+  - {name: ①地址更新在群内获取, server: 129.150.46.24, port: 80, type: vmess, uuid: 3071d618-9899-4302-9eaf-217b49c0c01d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
+  - {name: ②地址更新在群内获取, server: 129.150.35.212, port: 80, type: vmess, uuid: 9f2f3d2b-4751-423d-a3c3-4b105b866d53, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
+  - {name: ③地址更新在群内获取, server: 141.147.170.159, port: 13820, type: vmess, uuid: 90f3e032-eb11-4d0e-d5f1-9d4473300318, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
+  - {name: ④地址更新在群内获取, server: 64.110.97.219, port: 99, type: vmess, uuid: 4253d1ce-09e5-4367-ee01-b0282b1b010b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+  - {name: ⑤地址更新在群内获取, server: 144.24.93.29, port: 80, type: vmess, uuid: a6ac62cc-20a9-4134-c3c6-44bd5c118853, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
+  - {name: ⑥地址更新在群内获取, server: 141.147.171.156, port: 8880, type: vmess, uuid: 9e8deac7-8687-4af9-8204-3dac202edc2c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: "aaa.ipayyds.xyz"}}}
+  - {name: ⑦地址更新在群内获取, server: 150.230.205.62, port: 16914, type: vmess, uuid: efc9b4f9-4296-4cb7-98e1-f668df69a617, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
