@@ -1,4 +1,4 @@
-let joinStats = true;  //可选加入统计。 加入统计不会收集任何隐私信息，仅统计访问量。
+.let joinStats = true;  //可选加入统计。 加入统计不会收集任何隐私信息，仅统计访问量。
 let webPath = 'https://raw.githubusercontent.com/jianjianai/NewBingGoGo-Web/master/src/main/resources'; //web页面地址，可以修改成自己的仓库来自定义前端页面
 let serverConfig = {
     "h1": "NewBingGoGo",
@@ -238,7 +238,7 @@ async function goUrl(request, url, addHeaders) {
     }
 
 
-    let cookieID = 1oIe3ATT0x-0hKnYzMagI-q377G9MPAzDXFFxdFNRGe0iSzAPR2JU45emOtK9y6xMxEPvoCVqf11wjcv9UliqEAsZI8Lrp2aPGwkyUMxblIry5KLKAb6A6ZDvSr2eLpYvRQwk-lo47jHCbTSx7vSD9RcT0yhC8EVZTsHVz92rlyx9qBgMgu9I7-OtNwaA9uQKpqi6Iw4TlDae6mRAKQyRCQ;
+    let cookieID = 0;
     if(reqHeaders.get('NewBingGoGoWeb')){//如果是web版
         //添加配置的随机cookie
         if (cookies.length === 0) {
