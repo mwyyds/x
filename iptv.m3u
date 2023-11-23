@@ -1,15 +1,9 @@
 {
-  "lives": [
+  "parses": [
     {
-      "group": "某人",
-      "channels": [
-        {
-          "name": "某人",
-          "urls": [
-            "https://go.ipayyds.xyz/https://ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u"
-          ]
-        }
-      ]
+      "name": "某人",
+      "type": 0,
+      "url": "https://go.ipayyds.xyz/https://raw.githubusercontent.com/mwyyds/x/main/iptv.m3u"
     }
   ]
 }
