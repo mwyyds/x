@@ -1,1 +1,22 @@
-urls": [{ "url": "https://go.ipayyds.xyz/https://raw.githubusercontent.com/YueChan/Live/main/IPTV.txt", "name": "某人TV" },
+{
+  "lives": [
+    {
+      "group": "某人直播",
+      "channels": [
+        {
+          "name": "某人",
+          "urls": [
+            "https://go.ipayyds.xyz/https://raw.githubusercontent.com/YueChan/Live/main/IPTV.txt"
+          ]
+        }
+      ]
+    }
+  ],
+  "parses": [
+    {
+      "name": "某人",
+      "type": 0,
+      "url": "https://go.ipayyds.xyz/https://raw.githubusercontent.com/YueChan/Live/main/IPTV.txt"
+    }
+  ]
+}
